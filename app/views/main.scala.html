@@ -1,0 +1,123 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(title: String, user: models.users.User)(content: Html)
+
+@main("Games", user) {
+  
+    <!doctype html>
+  
+    <html>
+    <head>
+                      <!-- Latest compiled and minified CSS -->
+                      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    
+    <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="main.css" rel="stylesheet">
+    <script src="routes.assets@("script.js")"></script>
+    
+    <meta charset="UTF-8">
+    <title>TGN</title>
+    </head>
+    <body>
+      
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"> Online Site</a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li @if(title == "Games"){class="active"}>
+                        <a href="@routes.HomeController.index()">Games</a>
+                    </li>
+      <li><a href="/signUp"> Sign in/Sign up</a></li>     
+      <li><a href="/support">Support</a></li>
+      <li><a href="/reviews">Reviews</a></li>
+      <li><a href="/news">News</a></li>
+      <li><a href="/videos">Videos</a></li>
+      <li  @if (title=="Login"){class="active"}>
+          <a href="@routes.Login.login()">Login</a>
+      </li>
+      </ul>
+                
+            </div>
+        </nav>
+     
+<li @if (title == "Login") {class =="active"}>
+    @if (user !=null){
+        <a href="@routes.LoginController.logout()">Logout @user.getName()</a>
+    } else {
+        <a href="@routes.LoginController.login()">Login</a>
+    }
+</li>
+  
+     
+ 
+      
+    
+
+     
+      </ul>
+      <h1> Tallaght Gaming News </h1>  
+      <h2> For All Things Gaming </h2>	
+        <style type="text/css">
+            body {background:#1f1c21 !important }               
+             </style> 
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="my-slider" class="carousel slide" data-ride="carousel">
+                           
+                           
+    
+                            <!-- Wrapper For Slides -->
+                            <div class="carousel-inner" role="listbox">   
+                                <div class ="item active">
+                                    <img src="assets/images/farcry5.jpg" alt"far cry 5" />
+                                    <div class="carousel-caption">
+                                        <h1> Check out Our Review Section!</h1>
+                                        </div>
+                               </div>
+                               <div class ="item">
+                                    <img src="assets/images/games.jpg" alt"far cry 5" />
+                                    <div class="carousel-caption">
+                                        <h1> Check out what's Trending</h1>
+                                        </div>
+                               </div>
+                                </div>    
+    
+    
+                            <!-- Navigation Controls -->
+                            <a class="left carousel-control" href="#my-slider" role="button" data-slide="prev">
+                                <span class=" glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control" href="#my-slider" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </a>
+                         
+                                                                              
+                   
+                
+                    
+    
+    
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <footer>
+                <p>Second Year Project:
+                Alan Kelly Anthony Koleoso Lee McDonnell
+                </a></p>
+              </footer>
+            }  

@@ -1,0 +1,123 @@
+@(loginForm: Form[models.Login], user: models.users.User)
+@import helper._
+
+
+@main("Log in") {
+
+<div class="cole-xs-4">
+    <h3>Sign In!</h3>
+
+    @if(loginForm.hasGlobalErrors){
+        <p class="alert alert-warning">
+            @loginForm.hasGlobalError.message
+        </p>
+    }
+
+    @if(flash.containsKey("error")) {
+        <p class="alert alert-warning">
+            @flash.get("loginRequired")
+        </p>
+    }
+
+
+                <!--Login Form -->
+                @helper.form(action = controller.routes.LoginController.loginSubmit()) {
+                    @* CSRF attack prevention *@
+
+                    @* used to authenticate the form submission*@
+
+                    @CSRF.formField
+
+
+                    <div class="form-group">
+                        @inputText(loginForm("email"), '_label -> "",
+                        'class -> "form-control input-xs", 'placeholder -> "Email")
+                    </div>
+
+                    <div class="form-group">
+                        @inputPassword(loginForm("password"), '_label -> ""
+                        'class -> "form-control input-xs", 'placeholder -> "password")
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Sign In" class="btn btn-primary">
+
+                    </div>
+                }
+</div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

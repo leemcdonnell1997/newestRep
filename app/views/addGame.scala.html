@@ -1,0 +1,52 @@
+@(gameForm: Form[models.Game])
+
+@import helper._
+
+@main("Add Game"){
+    <p class="lead">Addd new Game</p>
+
+@form(action=routes.HomeController.addGameSubmit(), 'class -> "form-horizontal", 'role -> "form")
+@CSRF.formField
+
+
+
+
+@inputText(gameForm("name"), '_label -> "name", 'class -> "form-control")
+@inputText(gameForm("age"), '_label -> "age", 'class -> "form-control")
+@inputText(gameForm("description"), '_label -> "description", 'class -> "form-control")
+@select(
+    gameForm("category.id"),
+    options(Category.options),
+    '_label -> "Category", '_default -> "-- Choose a category --",
+    '_showConstraints -> false, 'class -. "form-control"
+)
+
+
+@inputText(gameForm("id"), '_label -> "", 'hidden -> "hidden")
+
+
+<div class="actions">
+
+    <input type="submit" value="add GAME" class="btn btn-primary">
+<a href="@routes.HomeController.index">
+    <button type="button" class="btn btn-warning">Cancel</button>
+
+
+</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
