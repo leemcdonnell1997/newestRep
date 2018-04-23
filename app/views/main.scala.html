@@ -36,29 +36,30 @@
 
                 <ul class="nav navbar-nav">
                     <li @if(title == "Games"){class="active"}>
-                        <a href="@routes.HomeController.index()">Games</a>
+                        <a href="@routes.HomeController.index(0)">Games</a>
                     </li>
       <li><a href="/signUp"> Sign in/Sign up</a></li>     
       <li><a href="/support">Support</a></li>
       <li><a href="/reviews">Reviews</a></li>
       <li><a href="/news">News</a></li>
       <li><a href="/videos">Videos</a></li>
-      <li  @if (title=="Login"){class="active"}>
-          <a href="@routes.Login.login()">Login</a>
-      </li>
-      </ul>
-                
-            </div>
-        </nav>
-     
-<li @if (title == "Login") {class =="active"}>
-    @if (user !=null){
-        <a href="@routes.LoginController.logout()">Logout @user.getName()</a>
-    } else {
-        <a href="@routes.LoginController.login()">Login</a>
-    }
-</li>
-  
+      <li  @if(title=="Login"){class="active"}>
+     <a href="@routes.LoginController.login()">Login</a>
+                   </li>
+                   </ul>
+                             
+                         </div>
+                     </nav>
+<!-- Login / Logout -->
+<li class="nav-item">
+        <li @if(title == "Login") {class =="active"}>
+        @if(user !=null){
+      <a href="@routes.LoginController.logout()">Logout</a>
+        } else {
+          <a class="nav-link" href="@routes.LoginController.login()">Login</a>
+        }
+    </li>
+  </ul> <!-- End of Nav list-->
      
  
       

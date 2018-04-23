@@ -14,6 +14,7 @@ import views.html.*;
 
 // Import models
 import models.users.*;
+import models.*;
 
 public class LoginController extends Controller {
 
@@ -36,7 +37,7 @@ public class LoginController extends Controller {
         Form<Login> loginSubmitform = formFactory.form(Login.class).bindFromRequest();
         if (loginSubmitform.hasErrors()) {
             flash("danger", "Invalid email or password");
-            return badRequest(login.render(null));
+            return badRequest(login.render(loginSubmitform, null));
         } else {
             flash("success", "You have successfully logged in");
             session().clear();
@@ -73,12 +74,12 @@ public class LoginController extends Controller {
         public Result cancelDeleteAccount(){
     
                 flash("success", "Account deletion cancelled");
-                return redirect(routes.HomeController.myAccount());
+                return redirect(routes.HomeController.index(0));
         }
     
         @Security.Authenticated(Secured.class)
         public Result deleteAccountPage(){
-            return ok(deleteAccount.render(getUserFromSession()));
+            return redirect(routes.LoginController.login());
         }
     
 }

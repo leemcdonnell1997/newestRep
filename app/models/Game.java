@@ -15,15 +15,15 @@ public class Game extends Model {
 @Id
 
 @Constraints.Required
-private Long id;
+public Long id;
 @Constraints.Required
-private String name;
+public String name;
 @Constraints.Required
-private String age;
+public String age;
 @Constraints.Required
-private String description;
+public String description;
 @ManyToOne
-private Category category;
+public Category category;
 
 
 
@@ -36,6 +36,39 @@ public Game(Long id, String name, String age, String description){
     this.id = id;
     this.name = name;
     this.age = age;
+    this.description = description;
+}
+
+
+public Long getId() {
+    return this.id;
+}
+
+public void setId(Long id) {
+    this.id = id;
+}
+
+public String getname() {
+    return this.name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+
+public String getAge() {
+    return this.age;
+}
+
+public void setAge(String age) {
+    this.age = age;
+}
+
+public String getDescription() {
+    return this.description;
+}
+
+public void setDescription(String description) {
     this.description = description;
 }
 

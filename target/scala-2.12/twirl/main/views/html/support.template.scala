@@ -22,16 +22,17 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object support extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object support extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](_display_(/*1.2*/main("Games")/*1.15*/{_display_(Seq[Any](format.raw/*1.16*/("""
-"""),format.raw/*2.1*/("""<!doctype html>
+Seq[Any](format.raw/*1.27*/("""
+"""),_display_(/*2.2*/main("Games", user)/*2.21*/{_display_(Seq[Any](format.raw/*2.22*/("""
+"""),format.raw/*3.1*/("""<!doctype html>
 
 <html>
 <head>
@@ -70,7 +71,7 @@ Seq[Any](_display_(/*1.2*/main("Games")/*1.15*/{_display_(Seq[Any](format.raw/*1
   <h1> Support Page </h1>  
   <h2>Need a hand? Let us know!</h2>
      
-  """)))}),format.raw/*41.4*/("""
+  """)))}),format.raw/*42.4*/("""
 
 
 
@@ -82,7 +83,7 @@ Seq[Any](_display_(/*1.2*/main("Games")/*1.15*/{_display_(Seq[Any](format.raw/*1
 
 
 
-    """),format.raw/*53.5*/("""</body>
+    """),format.raw/*54.5*/("""</body>
 
   <footer>
     <p>Second Year Project:
@@ -97,9 +98,9 @@ Seq[Any](_display_(/*1.2*/main("Games")/*1.15*/{_display_(Seq[Any](format.raw/*1
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(user)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
 
   def ref: this.type = this
 
@@ -108,11 +109,11 @@ Seq[Any](_display_(/*1.2*/main("Games")/*1.15*/{_display_(Seq[Any](format.raw/*1
 
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 20 12:47:10 IST 2018
+                  DATE: Mon Apr 23 11:28:56 IST 2018
                   SOURCE: /home/wdd/Desktop/play-java-seed/app/views/support.scala.html
-                  HASH: 96cbb5eb40d46cecf77cfdd4af33bad8760610b0
-                  MATRIX: 1032->1|1053->14|1091->15|1119->17|2205->1073|2260->1101
-                  LINES: 33->1|33->1|33->1|34->2|73->41|85->53
+                  HASH: 36cb7e9ca23bf4ba4053e367385bdd1af21ad7f6
+                  MATRIX: 961->1|1081->26|1109->29|1136->48|1174->49|1202->51|2288->1107|2343->1135
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|74->42|86->54
                   -- GENERATED --
               */
           

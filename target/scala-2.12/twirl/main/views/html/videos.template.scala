@@ -22,16 +22,16 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object videos extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[List[models.Game],play.twirl.api.HtmlFormat.Appendable] {
+object videos extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[models.Game],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(Game: List[models.Game]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(Game: List[models.Game], user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.27*/("""
-"""),_display_(/*2.2*/main("Games")/*2.15*/{_display_(Seq[Any](format.raw/*2.16*/("""
+Seq[Any](format.raw/*1.52*/("""
+"""),_display_(/*2.2*/main("Games", user)/*2.21*/{_display_(Seq[Any](format.raw/*2.22*/("""
 """),format.raw/*3.1*/("""<!doctype html>
 
 <html>
@@ -100,9 +100,9 @@ Seq[Any](format.raw/*1.27*/("""
     }
   }
 
-  def render(Game:List[models.Game]): play.twirl.api.HtmlFormat.Appendable = apply(Game)
+  def render(Game:List[models.Game],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(Game,user)
 
-  def f:((List[models.Game]) => play.twirl.api.HtmlFormat.Appendable) = (Game) => apply(Game)
+  def f:((List[models.Game],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (Game,user) => apply(Game,user)
 
   def ref: this.type = this
 
@@ -111,10 +111,10 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 20 12:47:10 IST 2018
+                  DATE: Mon Apr 23 11:28:56 IST 2018
                   SOURCE: /home/wdd/Desktop/play-java-seed/app/views/videos.scala.html
-                  HASH: f0a655d5d44e65e9252993cf366318e099511468
-                  MATRIX: 960->1|1080->26|1108->29|1129->42|1167->43|1195->45|2675->1497|2704->1498|2748->1514|2777->1515|2819->1529|3536->2215
+                  HASH: 685a9ac8f2cce6cd6a4aa9146c51b8210fafceea
+                  MATRIX: 978->1|1123->51|1151->54|1178->73|1216->74|1244->76|2724->1528|2753->1529|2797->1545|2826->1546|2868->1560|3585->2246
                   LINES: 28->1|33->1|34->2|34->2|34->2|35->3|81->49|81->49|81->49|81->49|82->50|97->65
                   -- GENERATED --
               */

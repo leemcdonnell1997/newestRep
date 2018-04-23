@@ -22,16 +22,16 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object news extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[List[models.Review],play.twirl.api.HtmlFormat.Appendable] {
+object news extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(Review: List[models.Review]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.31*/("""
-"""),_display_(/*2.2*/main("Games")/*2.15*/{_display_(Seq[Any](format.raw/*2.16*/("""
+Seq[Any](format.raw/*1.27*/("""
+"""),_display_(/*2.2*/main("Games", user)/*2.21*/{_display_(Seq[Any](format.raw/*2.22*/("""
 """),format.raw/*3.1*/("""<!doctype html>
 
 <html>
@@ -155,9 +155,9 @@ Seq[Any](format.raw/*1.31*/("""
     }
   }
 
-  def render(Review:List[models.Review]): play.twirl.api.HtmlFormat.Appendable = apply(Review)
+  def render(user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(user)
 
-  def f:((List[models.Review]) => play.twirl.api.HtmlFormat.Appendable) = (Review) => apply(Review)
+  def f:((models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
 
   def ref: this.type = this
 
@@ -166,10 +166,10 @@ Seq[Any](format.raw/*1.31*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 20 12:47:10 IST 2018
+                  DATE: Mon Apr 23 11:28:56 IST 2018
                   SOURCE: /home/wdd/Desktop/play-java-seed/app/views/news.scala.html
-                  HASH: 453ac7491e5e7c6c2e5f17117293a29527460747
-                  MATRIX: 960->1|1084->30|1112->33|1133->46|1171->47|1199->49
+                  HASH: 094ded7a8bd5c0163127750c20b1dab943ff32fa
+                  MATRIX: 958->1|1078->26|1106->29|1133->48|1171->49|1199->51
                   LINES: 28->1|33->1|34->2|34->2|34->2|35->3
                   -- GENERATED --
               */

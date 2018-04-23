@@ -31,126 +31,42 @@ object login extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 /*2.2*/import helper._
 
 
-Seq[Any](format.raw/*3.1*/("""
+Seq[Any](format.raw/*1.58*/(""" 
+"""),format.raw/*3.1*/("""
 
-"""),_display_(/*5.2*/main("Log in")/*5.16*/ {_display_(Seq[Any](format.raw/*5.18*/("""
 
-"""),format.raw/*7.1*/("""<div class="cole-xs-4">
-    <h3>Sign In!</h3>
+"""),_display_(/*6.2*/main("Login Required", user)/*6.30*/ {_display_(Seq[Any](format.raw/*6.32*/("""
+"""),format.raw/*7.1*/("""<div class="col-sm-4">
+    <h3>Sign in</h3>
+    <!-- Display login errors if they exist -->
+    """),_display_(/*10.6*/if(loginForm.hasGlobalErrors)/*10.35*/ {_display_(Seq[Any](format.raw/*10.37*/("""
+    """),format.raw/*11.5*/("""<p class="alert alert-warning">
+        """),_display_(/*12.10*/for(error <- loginForm.globalErrors) yield /*12.46*/ {_display_(Seq[Any](format.raw/*12.48*/("""
+        """),format.raw/*13.9*/("""<p>"""),_display_(/*13.13*/error/*13.18*/.format(messages())),format.raw/*13.37*/("""
 
-    """),_display_(/*10.6*/if(loginForm.hasGlobalErrors)/*10.35*/{_display_(Seq[Any](format.raw/*10.36*/("""
-        """),format.raw/*11.9*/("""<p class="alert alert-warning">
-            """),_display_(/*12.14*/loginForm/*12.23*/.hasGlobalError.message),format.raw/*12.46*/("""
-        """),format.raw/*13.9*/("""</p>
-    """)))}),format.raw/*14.6*/("""
-
-    """),_display_(/*16.6*/if(flash.containsKey("error"))/*16.36*/ {_display_(Seq[Any](format.raw/*16.38*/("""
-        """),format.raw/*17.9*/("""<p class="alert alert-warning">
-            """),_display_(/*18.14*/flash/*18.19*/.get("loginRequired")),format.raw/*18.40*/("""
-        """),format.raw/*19.9*/("""</p>
+        """),format.raw/*15.9*/("""</p>
+    """)))}),format.raw/*16.6*/("""  """),_display_(/*16.9*/if(flash.containsKey("error"))/*16.39*/ {_display_(Seq[Any](format.raw/*16.41*/("""
+    """),format.raw/*17.5*/("""<div class="alert alert-warning">
+        """),_display_(/*18.10*/flash/*18.15*/.get("loginRequired")),format.raw/*18.36*/("""
+    """),format.raw/*19.5*/("""</div>
     """)))}),format.raw/*20.6*/("""
-
-
-                """),format.raw/*23.17*/("""<!--Login Form -->
-                """),_display_(/*24.18*/helper/*24.24*/.form(action = controller.routes.LoginController.loginSubmit())/*24.87*/ {_display_(Seq[Any](format.raw/*24.89*/("""
-                    """),format.raw/*25.49*/("""
-
-                    """),format.raw/*27.66*/("""
-
-                    """),_display_(/*29.22*/CSRF/*29.26*/.formField),format.raw/*29.36*/("""
-
-
-                    """),format.raw/*32.21*/("""<div class="form-group">
-                        """),_display_(/*33.26*/inputText(loginForm("email"), '_label -> "",
-                        'class -> "form-control input-xs", 'placeholder -> "Email")),format.raw/*34.84*/("""
-                    """),format.raw/*35.21*/("""</div>
-
-                    <div class="form-group">
-                        """),_display_(/*38.26*/inputPassword(loginForm("password"), '_label -> ""
-                        'class -> "form-control input-xs", 'placeholder -> "password")),format.raw/*39.87*/("""
-                    """),format.raw/*40.21*/("""</div>
-
-                    <div class="form-group">
-                        <input type="submit" value="Sign In" class="btn btn-primary">
-
-                    </div>
-                """)))}),format.raw/*46.18*/("""
-"""),format.raw/*47.1*/("""</div>
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+""")))}),format.raw/*21.2*/("""
+    """),format.raw/*22.5*/("""<!-- The login form -->
+    """),_display_(/*23.6*/helper/*23.12*/.form(action = routes.LoginController.loginSubmit())/*23.64*/ {_display_(Seq[Any](format.raw/*23.66*/(""" """),_display_(/*23.68*/CSRF/*23.72*/.formField),format.raw/*23.82*/("""
+    """),format.raw/*24.5*/("""<div class="form-group">
+        <input type="text" name="email" class="form-control input-xs" placeholder="Email" value=""""),_display_(/*25.99*/loginForm("email")/*25.117*/.getValue.orElse(" ")),format.raw/*25.138*/("""">
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" class="form-control input-xs" placeholder="Password">
+    </div>
+
+    <!-- Add a submit button -->
+    <div class="form-group">
+        <input type="submit" value="Sign In" class="btn btn-primary">
+    </div>
+    """)))}),format.raw/*35.6*/("""
+
+"""),format.raw/*37.1*/("""</div>
 """)))}))
       }
     }
@@ -167,11 +83,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 20 12:47:10 IST 2018
+                  DATE: Mon Apr 23 11:28:56 IST 2018
                   SOURCE: /home/wdd/Desktop/play-java-seed/app/views/login.scala.html
-                  HASH: 65f71851de38500f0ffb4b63cbca4c8b0d404b0e
-                  MATRIX: 978->1|1107->59|1151->75|1179->78|1201->92|1240->94|1268->96|1346->148|1384->177|1423->178|1459->187|1531->232|1549->241|1593->264|1629->273|1669->283|1702->290|1741->320|1781->322|1817->331|1889->376|1903->381|1945->402|1981->411|2021->421|2068->440|2131->476|2146->482|2218->545|2258->547|2307->596|2357->663|2407->686|2420->690|2451->700|2502->723|2579->773|2728->901|2777->922|2882->1000|3040->1137|3089->1158|3304->1342|3332->1343
-                  LINES: 28->1|31->2|34->3|36->5|36->5|36->5|38->7|41->10|41->10|41->10|42->11|43->12|43->12|43->12|44->13|45->14|47->16|47->16|47->16|48->17|49->18|49->18|49->18|50->19|51->20|54->23|55->24|55->24|55->24|55->24|56->25|58->27|60->29|60->29|60->29|63->32|64->33|65->34|66->35|69->38|70->39|71->40|77->46|78->47
+                  HASH: ba2868685954bc130a0db11a51a37333934bda8b
+                  MATRIX: 978->1|1107->60|1152->57|1180->77|1209->81|1245->109|1284->111|1311->112|1434->209|1472->238|1512->240|1544->245|1612->286|1664->322|1704->324|1740->333|1771->337|1785->342|1825->361|1862->371|1902->381|1931->384|1970->414|2010->416|2042->421|2112->464|2126->469|2168->490|2200->495|2242->507|2274->509|2306->514|2361->543|2376->549|2437->601|2477->603|2506->605|2519->609|2550->619|2582->624|2732->747|2760->765|2803->786|3137->1090|3166->1092
+                  LINES: 28->1|31->2|34->1|35->3|38->6|38->6|38->6|39->7|42->10|42->10|42->10|43->11|44->12|44->12|44->12|45->13|45->13|45->13|45->13|47->15|48->16|48->16|48->16|48->16|49->17|50->18|50->18|50->18|51->19|52->20|53->21|54->22|55->23|55->23|55->23|55->23|55->23|55->23|55->23|56->24|57->25|57->25|57->25|67->35|69->37
                   -- GENERATED --
               */
           

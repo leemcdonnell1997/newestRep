@@ -31,6 +31,13 @@ public class HomeController extends Controller {
         this.env = e;
     }
 
+
+    private User getCurrentUser() {
+		User u = User.getLoggedIn(session().get("email"));
+		return u;
+	}
+
+
     public Result index(Long cat) {
 
        
@@ -41,10 +48,10 @@ public class HomeController extends Controller {
          gameList = Game.findAll();
 
      }  else {
-         gameList = Category.find.ref(cat).getGames();
+         categoryList = Category.findAll();
      }
 
-    return ok(index.render(gameList, categoryList, User.getUserById(session().get("email"))));
+    return ok(index.render(gameList, categoryList, getCurrentUser()));
 
     }
 
@@ -53,38 +60,43 @@ public class HomeController extends Controller {
         public Result addGame(){
 
             Form<Game> gameForm = formFactory.form(Game.class);
-            return ok(addGame.render(gameForm));
+            return ok(addGame.render(gameForm,  getCurrentUser()));
 
-    return redirect(controllers.routes.HomeController.index(0));
+   
         }
 
 
-        public Result addGameSumbit(){
-            Form<Game> newGameForm = formFactory(Game.class).bindFromREquest();
+        public Result addGameSubmit(){
+            Form<Game> newGameForm = formFactory.form(Game.class).bindFromRequest();
 
 
             if (newGameForm.hasErrors()){
-                return badRequest (addGame.render(newGameForm));
-            }else {
+                
+            return badRequest (addGame.render(newGameForm,  getCurrentUser()));
+            
+        }else {
                 Game newGame = newGameForm.get();
 
-                if (newGame.getId() == null ){
+                if (newGame.id == null ){
                      
                     newGame.save();
                 
                 
-                } else if (newGame.getId() != null){
+                } else if (newGame.id != null){
                     newGame.update();
                 }
-
-
                
+               
+                flash("Success", "game" +newGame.name + "added");
 
-                flash("Success", "game" +newGame.getName() + "added");
-
-                return redirect (controllers.routes.HomeController.index());
+                return redirect (controllers.routes.HomeController.index(0));
             }
         }
+               
+
+                
+            
+        
         
         @Security.Authenticated(Secured.class)
         @With(AuthAdmin.class)
@@ -96,7 +108,9 @@ public class HomeController extends Controller {
 
             return redirect(routes.HomeController.index(0));
         }
-@Security.Authenticated(Secured.class)
+
+
+        @Security.Authenticated(Secured.class)
 @Transactional
 public Result updateGame(Long id){
 
@@ -106,21 +120,17 @@ public Result updateGame(Long id){
     try{
         g = Game.find.byId(id);
 
-        gameForm -formFactory.form(Game.class).fill(g);
+        gameForm = formFactory.form(Game.class).fill(g);
     
     
     } catch (Exception ex) {
         return badRequest("error");
 
     }
-        return ok(addGame.render(gameForm));
-
+    return ok(addGame.render(gameForm, getCurrentUser()));
+ 
 }
-}
-
-
-
-
+       
 
 
 

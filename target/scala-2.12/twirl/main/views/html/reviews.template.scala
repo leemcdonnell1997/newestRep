@@ -22,16 +22,18 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object reviews extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object reviews extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](_display_(/*1.2*/main("Games")/*1.15*/ {_display_(Seq[Any](format.raw/*1.17*/("""
-"""),format.raw/*2.1*/("""<!doctype html>
+Seq[Any](format.raw/*1.27*/("""
+"""),_display_(/*2.2*/main("Games", user)/*2.21*/{_display_(Seq[Any](format.raw/*2.22*/("""
+
+"""),format.raw/*4.1*/("""<!doctype html>
 
 <html>
 <head>
@@ -83,9 +85,9 @@ Seq[Any](_display_(/*1.2*/main("Games")/*1.15*/ {_display_(Seq[Any](format.raw/*
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(user)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
 
   def ref: this.type = this
 
@@ -94,11 +96,11 @@ Seq[Any](_display_(/*1.2*/main("Games")/*1.15*/ {_display_(Seq[Any](format.raw/*
 
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 20 12:47:10 IST 2018
+                  DATE: Mon Apr 23 11:28:56 IST 2018
                   SOURCE: /home/wdd/Desktop/play-java-seed/app/views/reviews.scala.html
-                  HASH: 78b66b5a1c5bf98550b9ea51126bd6b870010a97
-                  MATRIX: 1032->1|1053->14|1092->16|1120->18
-                  LINES: 33->1|33->1|33->1|34->2
+                  HASH: a7f31052b1e74f8ccd50c1201564124dc1350378
+                  MATRIX: 961->1|1081->26|1109->29|1136->48|1174->49|1204->53
+                  LINES: 28->1|33->1|34->2|34->2|34->2|36->4
                   -- GENERATED --
               */
           

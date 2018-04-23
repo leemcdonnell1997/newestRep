@@ -29,12 +29,15 @@ public class Category extends Model {
         this.games = games;
     }
 
-    public Long getCatID() {
-        return catID;
+    public static Finder<Long,Category> find = new Finder<Long,Category>(Category.class);
+
+
+    public Long getId() {
+        return this.id;
     }
 
-    public void setCatID(Long catID) {
-        this.catID = catID;
+    public void setIed(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -45,10 +48,11 @@ public class Category extends Model {
         this.name = name;
     }
 
-    public static Finder<Long,Category> find = new Finder<Long,Category>(Category.class);
-
+    
+    
+    
     public static List<Category> findAll() {
-        return Category.find.query().where("name asc").findList();
+        return Category.find.query().where().orderBy("name asc").findList();
     }
 
         

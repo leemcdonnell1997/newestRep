@@ -1,123 +1,38 @@
-@(loginForm: Form[models.Login], user: models.users.User)
-@import helper._
+@(loginForm: Form[models.Login], user: models.users.User) 
+@import helper._ 
 
 
-@main("Log in") {
 
-<div class="cole-xs-4">
-    <h3>Sign In!</h3>
+@main("Login Required", user) {
+<div class="col-sm-4">
+    <h3>Sign in</h3>
+    <!-- Display login errors if they exist -->
+    @if(loginForm.hasGlobalErrors) {
+    <p class="alert alert-warning">
+        @for(error <- loginForm.globalErrors) {
+        <p>@error.format(messages())
 
-    @if(loginForm.hasGlobalErrors){
-        <p class="alert alert-warning">
-            @loginForm.hasGlobalError.message
         </p>
+    }  @if(flash.containsKey("error")) {
+    <div class="alert alert-warning">
+        @flash.get("loginRequired")
+    </div>
+    }
+}
+    <!-- The login form -->
+    @helper.form(action = routes.LoginController.loginSubmit()) { @CSRF.formField
+    <div class="form-group">
+        <input type="text" name="email" class="form-control input-xs" placeholder="Email" value="@loginForm("email").getValue.orElse(" ")">
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" class="form-control input-xs" placeholder="Password">
+    </div>
+
+    <!-- Add a submit button -->
+    <div class="form-group">
+        <input type="submit" value="Sign In" class="btn btn-primary">
+    </div>
     }
 
-    @if(flash.containsKey("error")) {
-        <p class="alert alert-warning">
-            @flash.get("loginRequired")
-        </p>
-    }
-
-
-                <!--Login Form -->
-                @helper.form(action = controller.routes.LoginController.loginSubmit()) {
-                    @* CSRF attack prevention *@
-
-                    @* used to authenticate the form submission*@
-
-                    @CSRF.formField
-
-
-                    <div class="form-group">
-                        @inputText(loginForm("email"), '_label -> "",
-                        'class -> "form-control input-xs", 'placeholder -> "Email")
-                    </div>
-
-                    <div class="form-group">
-                        @inputPassword(loginForm("password"), '_label -> ""
-                        'class -> "form-control input-xs", 'placeholder -> "password")
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" value="Sign In" class="btn btn-primary">
-
-                    </div>
-                }
 </div>
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
