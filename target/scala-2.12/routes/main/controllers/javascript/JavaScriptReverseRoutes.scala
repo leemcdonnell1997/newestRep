@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/play-java-seed/conf/routes
-// @DATE:Mon Apr 23 11:28:55 IST 2018
+// @DATE:Mon Apr 23 13:35:45 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,22 +19,32 @@ package controllers.javascript {
     }
 
   
-    // @LINE:9
-    def updateGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.updateGame",
+    // @LINE:18
+    def news: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.news",
       """
-        function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "updateGame/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "news"})
         }
       """
     )
   
-    // @LINE:8
-    def addGameSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.addGameSubmit",
+    // @LINE:16
+    def videos: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.videos",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addGameSubmit"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "videos"})
+        }
+      """
+    )
+  
+    // @LINE:14
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.index",
+      """
+        function(cat0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "index" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Long]].javascriptUnbind + """)("cat", cat0)])})
         }
       """
     )
@@ -49,19 +59,49 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
+    // @LINE:20
+    def support: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.support",
       """
-        function(cat0) {
-          return _wA({method:"GET", url:"""" + _prefix + """" + _qS([(cat0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[Long]].javascriptUnbind + """)("cat", cat0))])})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "support"})
+        }
+      """
+    )
+  
+    // @LINE:22
+    def reviews: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.reviews",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "reviews"})
+        }
+      """
+    )
+  
+    // @LINE:8
+    def addGameSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addGameSubmit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addGameSubmit"})
+        }
+      """
+    )
+  
+    // @LINE:9
+    def updateGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.updateGame",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "updateGame/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
   
   }
 
-  // @LINE:13
+  // @LINE:28
   class ReverseLoginController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -69,7 +109,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
+    // @LINE:29
     def loginSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.loginSubmit",
       """
@@ -79,7 +119,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
+    // @LINE:30
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.logout",
       """
@@ -89,7 +129,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:13
+    // @LINE:28
     def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.login",
       """
@@ -101,7 +141,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:17
+  // @LINE:32
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -109,7 +149,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
+    // @LINE:32
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

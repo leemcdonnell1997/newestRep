@@ -73,3 +73,6 @@ Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the ap
 2018-04-23 11:15:26 jdbc[44]: exception
 org.h2.jdbc.JdbcSQLException: Table "PLAY_EVOLUTIONS" not found; SQL statement:
 select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-193]
+2018-04-23 11:47:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PLAY_EVOLUTIONS[*]"; expected "PREPARE, {"; SQL statement:
+PLAY_EVOLUTIONS [42001-193]

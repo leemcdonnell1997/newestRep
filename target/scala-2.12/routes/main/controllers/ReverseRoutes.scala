@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/play-java-seed/conf/routes
-// @DATE:Mon Apr 23 11:28:55 IST 2018
+// @DATE:Mon Apr 23 13:35:45 IST 2018
 
 import play.api.mvc.Call
 
@@ -18,16 +18,22 @@ package controllers {
     }
 
   
-    // @LINE:9
-    def updateGame(id:Long): Call = {
+    // @LINE:18
+    def news(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "updateGame/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
+      Call("GET", _prefix + { _defaultPrefix } + "news")
     }
   
-    // @LINE:8
-    def addGameSubmit(): Call = {
+    // @LINE:16
+    def videos(): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "addGameSubmit")
+      Call("GET", _prefix + { _defaultPrefix } + "videos")
+    }
+  
+    // @LINE:14
+    def index(cat:Long): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "index" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("cat", cat)))))
     }
   
     // @LINE:7
@@ -36,34 +42,52 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "addGame")
     }
   
-    // @LINE:10
-    def index(cat:Long = 0L): Call = {
+    // @LINE:20
+    def support(): Call = {
       
-      Call("GET", _prefix + play.core.routing.queryString(List(if(cat == 0L) None else Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("cat", cat)))))
+      Call("GET", _prefix + { _defaultPrefix } + "support")
+    }
+  
+    // @LINE:22
+    def reviews(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "reviews")
+    }
+  
+    // @LINE:8
+    def addGameSubmit(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "addGameSubmit")
+    }
+  
+    // @LINE:9
+    def updateGame(id:Long): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "updateGame/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
   }
 
-  // @LINE:13
+  // @LINE:28
   class ReverseLoginController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:14
+    // @LINE:29
     def loginSubmit(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "loginSubmit")
     }
   
-    // @LINE:15
+    // @LINE:30
     def logout(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "logout")
     }
   
-    // @LINE:13
+    // @LINE:28
     def login(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "login")
@@ -71,14 +95,14 @@ package controllers {
   
   }
 
-  // @LINE:17
+  // @LINE:32
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:17
+    // @LINE:32
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

@@ -50,3 +50,21 @@ run
 clean
 compile
 run
+h2-browser
+run
+clean
+compile
+run
+play clean
+clean
+start
+clean
+compile
+start
+clean
+compile
+clean
+run
+compile
+clean
+compile

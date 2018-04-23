@@ -28,7 +28,21 @@ public class HomeController extends Controller {
     @Inject
     public HomeController(FormFactory f, Environment e) {
         this.formFactory = f;
-        this.env = e;
+        this.env = e
+    }
+
+    public Result videos() {
+        return ok(views.html.videos.render(getCurrentUser()));
+    }
+    public Result news() {
+        return ok(views.html.news.render(gameList, getCurrentUser()));
+    }
+    public Result support() {
+        return ok(views.html.support.render(gameList, getCurrentUser()));
+    }
+
+    public Result reviews() {
+        return ok(views.html.reviews.render(gameList, getCurrentUser()));
     }
 
 

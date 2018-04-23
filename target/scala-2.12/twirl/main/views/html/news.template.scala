@@ -166,7 +166,7 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Apr 23 11:28:56 IST 2018
+                  DATE: Mon Apr 23 13:35:45 IST 2018
                   SOURCE: /home/wdd/Desktop/play-java-seed/app/views/news.scala.html
                   HASH: 094ded7a8bd5c0163127750c20b1dab943ff32fa
                   MATRIX: 958->1|1078->26|1106->29|1133->48|1171->49|1199->51

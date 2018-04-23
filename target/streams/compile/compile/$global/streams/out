@@ -1,0 +1,12 @@
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/play-java-seed/app/controllers/HomeController.java:38:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable gameList[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(views.html.news.render(gameList, getCurrentUser()));[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/play-java-seed/app/controllers/HomeController.java:41:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable gameList[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(views.html.support.render(gameList, getCurrentUser()));[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/play-java-seed/app/controllers/HomeController.java:45:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable gameList[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(views.html.reviews.render(gameList, getCurrentUser()));[0m

@@ -7,7 +7,22 @@
 GET     /addGame                           controllers.HomeController.addGame
 POST    /addGameSubmit                      controllers.HomeController.addGameSubmit
 GET     /updateGame/:id                    controllers.HomeController.updateGame(id: Long)
-GET     /                                 controllers.HomeController.index(cat:Long?=0L)
+
+
+
+
+GET     /index                     controllers.HomeController.index(cat: Long)
+
+GET     /videos                    controllers.HomeController.videos
+
+GET     /news                      controllers.HomeController.news
+
+GET     /support                   controllers.HomeController.support
+
+GET     /reviews                   controllers.HomeController.reviews
+             
+
+
 
 
 GET      /login                          controllers.LoginController.login

@@ -36,9 +36,8 @@ object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlF
 
 
 Seq[Any](format.raw/*8.1*/("""
-"""),_display_(/*9.2*/main("Games", user)/*9.21*/ {_display_(Seq[Any](format.raw/*9.23*/("""
   
-    """),format.raw/*11.5*/("""<!doctype html>
+    """),format.raw/*10.5*/("""<!doctype html>
   
     <html>
     <head>
@@ -51,7 +50,7 @@ Seq[Any](format.raw/*8.1*/("""
     <!-- Latest compiled JavaScript -->
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="main.css" rel="stylesheet">
-    <script src="routes.assets"""),_display_(/*24.32*/("script.js")),format.raw/*24.45*/(""""></script>
+    <script src="routes.assets"""),_display_(/*23.32*/("script.js")),format.raw/*23.45*/(""""></script>
     
     <meta charset="UTF-8">
     <title>TGN</title>
@@ -65,16 +64,16 @@ Seq[Any](format.raw/*8.1*/("""
                 </div>
 
                 <ul class="nav navbar-nav">
-                    <li """),_display_(/*38.26*/if(title == "Games")/*38.46*/{_display_(Seq[Any](format.raw/*38.47*/("""class="active"""")))}),format.raw/*38.62*/(""">
-                        <a href=""""),_display_(/*39.35*/routes/*39.41*/.HomeController.index(0)),format.raw/*39.65*/("""">Games</a>
+                    <li """),_display_(/*37.26*/if(title == "Games")/*37.46*/{_display_(Seq[Any](format.raw/*37.47*/("""class="active"""")))}),format.raw/*37.62*/(""">
+                        <a href=""""),_display_(/*38.35*/routes/*38.41*/.HomeController.index(0)),format.raw/*38.65*/("""">Games</a>
                     </li>
       <li><a href="/signUp"> Sign in/Sign up</a></li>     
       <li><a href="/support">Support</a></li>
       <li><a href="/reviews">Reviews</a></li>
       <li><a href="/news">News</a></li>
       <li><a href="/videos">Videos</a></li>
-      <li  """),_display_(/*46.13*/if(title=="Login")/*46.31*/{_display_(Seq[Any](format.raw/*46.32*/("""class="active"""")))}),format.raw/*46.47*/(""">
-     <a href=""""),_display_(/*47.16*/routes/*47.22*/.LoginController.login()),format.raw/*47.46*/("""">Login</a>
+      <li  """),_display_(/*45.13*/if(title=="Login")/*45.31*/{_display_(Seq[Any](format.raw/*45.32*/("""class="active"""")))}),format.raw/*45.47*/(""">
+     <a href=""""),_display_(/*46.16*/routes/*46.22*/.LoginController.login()),format.raw/*46.46*/("""">Login</a>
                    </li>
                    </ul>
                              
@@ -82,13 +81,13 @@ Seq[Any](format.raw/*8.1*/("""
                      </nav>
 <!-- Login / Logout -->
 <li class="nav-item">
-        <li """),_display_(/*55.14*/if(title == "Login")/*55.34*/ {_display_(Seq[Any](format.raw/*55.36*/("""class =="active"""")))}),format.raw/*55.53*/(""">
-        """),_display_(/*56.10*/if(user !=null)/*56.25*/{_display_(Seq[Any](format.raw/*56.26*/("""
-      """),format.raw/*57.7*/("""<a href=""""),_display_(/*57.17*/routes/*57.23*/.LoginController.logout()),format.raw/*57.48*/("""">Logout ???</a>
-        """)))}/*58.11*/else/*58.16*/{_display_(Seq[Any](format.raw/*58.17*/("""
-          """),format.raw/*59.11*/("""<a class="nav-link" href=""""),_display_(/*59.38*/routes/*59.44*/.LoginController.login()),format.raw/*59.68*/("""">Login</a>
-        """)))}),format.raw/*60.10*/("""
-    """),format.raw/*61.5*/("""</li>
+        <li """),_display_(/*54.14*/if(title == "Login")/*54.34*/ {_display_(Seq[Any](format.raw/*54.36*/("""class =="active"""")))}),format.raw/*54.53*/(""">
+        """),_display_(/*55.10*/if(user !=null)/*55.25*/{_display_(Seq[Any](format.raw/*55.26*/("""
+      """),format.raw/*56.7*/("""<a href=""""),_display_(/*56.17*/routes/*56.23*/.LoginController.logout()),format.raw/*56.48*/("""">Logout</a>
+        """)))}/*57.11*/else/*57.16*/{_display_(Seq[Any](format.raw/*57.17*/("""
+          """),format.raw/*58.11*/("""<a class="nav-link" href=""""),_display_(/*58.38*/routes/*58.44*/.LoginController.login()),format.raw/*58.68*/("""">Login</a>
+        """)))}),format.raw/*59.10*/("""
+    """),format.raw/*60.5*/("""</li>
   </ul> <!-- End of Nav list-->
      
  
@@ -100,8 +99,8 @@ Seq[Any](format.raw/*8.1*/("""
       <h1> Tallaght Gaming News </h1>  
       <h2> For All Things Gaming </h2>	
         <style type="text/css">
-            body """),format.raw/*73.18*/("""{"""),format.raw/*73.19*/("""background:#1f1c21 !important """),format.raw/*73.49*/("""}"""),format.raw/*73.50*/("""               
-             """),format.raw/*74.14*/("""</style> 
+            body """),format.raw/*72.18*/("""{"""),format.raw/*72.19*/("""background:#1f1c21 !important """),format.raw/*72.49*/("""}"""),format.raw/*72.50*/("""               
+             """),format.raw/*73.14*/("""</style> 
         <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -151,7 +150,7 @@ Seq[Any](format.raw/*8.1*/("""
                 Alan Kelly Anthony Koleoso Lee McDonnell
                 </a></p>
               </footer>
-            """)))}),format.raw/*124.14*/("""  """))
+            """))
       }
     }
   }
@@ -167,11 +166,11 @@ Seq[Any](format.raw/*8.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Apr 23 11:30:48 IST 2018
+                  DATE: Mon Apr 23 13:35:45 IST 2018
                   SOURCE: /home/wdd/Desktop/play-java-seed/app/views/main.scala.html
-                  HASH: 27222775cb03b269fd35ac059161f014aae2556b
-                  MATRIX: 1224->260|1373->316|1400->318|1427->337|1466->339|1501->347|2382->1201|2416->1214|2833->1604|2862->1624|2901->1625|2947->1640|3010->1676|3025->1682|3070->1706|3382->1991|3409->2009|3448->2010|3494->2025|3538->2042|3553->2048|3598->2072|3836->2283|3865->2303|3905->2305|3953->2322|3991->2333|4015->2348|4054->2349|4088->2356|4125->2366|4140->2372|4186->2397|4231->2424|4244->2429|4283->2430|4322->2441|4376->2468|4391->2474|4436->2498|4488->2519|4520->2524|4754->2730|4783->2731|4841->2761|4870->2762|4927->2791|7194->5026
-                  LINES: 33->7|38->8|39->9|39->9|39->9|41->11|54->24|54->24|68->38|68->38|68->38|68->38|69->39|69->39|69->39|76->46|76->46|76->46|76->46|77->47|77->47|77->47|85->55|85->55|85->55|85->55|86->56|86->56|86->56|87->57|87->57|87->57|87->57|88->58|88->58|88->58|89->59|89->59|89->59|89->59|90->60|91->61|103->73|103->73|103->73|103->73|104->74|154->124
+                  HASH: ba7d4af7c3286dae719c389fa351eea531045e13
+                  MATRIX: 1224->260|1373->316|1408->324|2289->1178|2323->1191|2740->1581|2769->1601|2808->1602|2854->1617|2917->1653|2932->1659|2977->1683|3289->1968|3316->1986|3355->1987|3401->2002|3445->2019|3460->2025|3505->2049|3743->2260|3772->2280|3812->2282|3860->2299|3898->2310|3922->2325|3961->2326|3995->2333|4032->2343|4047->2349|4093->2374|4134->2397|4147->2402|4186->2403|4225->2414|4279->2441|4294->2447|4339->2471|4391->2492|4423->2497|4657->2703|4686->2704|4744->2734|4773->2735|4830->2764
+                  LINES: 33->7|38->8|40->10|53->23|53->23|67->37|67->37|67->37|67->37|68->38|68->38|68->38|75->45|75->45|75->45|75->45|76->46|76->46|76->46|84->54|84->54|84->54|84->54|85->55|85->55|85->55|86->56|86->56|86->56|86->56|87->57|87->57|87->57|88->58|88->58|88->58|88->58|89->59|90->60|102->72|102->72|102->72|102->72|103->73
                   -- GENERATED --
               */
           

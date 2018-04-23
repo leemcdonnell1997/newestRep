@@ -30,36 +30,35 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
       {
 
 
-Seq[Any](format.raw/*2.1*/("""
-"""),_display_(/*3.2*/main("Games", user)/*3.21*/ {_display_(Seq[Any](format.raw/*3.23*/("""
-  """),format.raw/*4.3*/("""<h1>Gaming Reviews!</h1>
+Seq[Any](_display_(/*2.2*/main("Home PAge", user)/*2.25*/ {_display_(Seq[Any](format.raw/*2.27*/("""
+  """),format.raw/*3.3*/("""<h1>Gaming Reviews!</h1>
 
   <p class="lead">Reviews</p>
   <div class="row">
     <div class="col-sm-2">
       <h4>categories</h4>
       <ul class="list-group">
-        <a href=""""),_display_(/*11.19*/routes/*11.25*/.HomeController.index(0)),format.raw/*11.49*/("""" class="list-group-item">All categories</a>
+        <a href=""""),_display_(/*10.19*/routes/*10.25*/.HomeController.index(0)),format.raw/*10.49*/("""" class="list-group-item">All categories</a>
 
-"""),_display_(/*13.2*/for(c <- categories) yield /*13.22*/{_display_(Seq[Any](format.raw/*13.23*/("""
-  """),format.raw/*14.3*/("""<li class"list-group-item">"""),_display_(/*14.31*/c/*14.32*/.getName),format.raw/*14.40*/("""
-    """),format.raw/*15.5*/("""<span class="badge">???</span>
+"""),_display_(/*12.2*/for(c <- categories) yield /*12.22*/{_display_(Seq[Any](format.raw/*12.23*/("""
+  """),format.raw/*13.3*/("""<li class"list-group-item">"""),_display_(/*13.31*/c/*13.32*/.getName),format.raw/*13.40*/("""
+    """),format.raw/*14.5*/("""<span class="badge">???</span>
   </li>
-""")))}),format.raw/*17.2*/("""
+""")))}),format.raw/*16.2*/("""
         
-      """),format.raw/*19.7*/("""</ul>
+      """),format.raw/*18.7*/("""</ul>
     </div>
   </div>
 
 
-  """),_display_(/*24.4*/if(flash.containsKey("success"))/*24.36*/ {_display_(Seq[Any](format.raw/*24.38*/("""
-    """),format.raw/*25.5*/("""<div class="alert alert-success">
-    """),_display_(/*26.6*/flash/*26.11*/.get("success")),format.raw/*26.26*/("""
-    """),format.raw/*27.5*/("""</div>
-    """)))}),format.raw/*28.6*/("""
+  """),_display_(/*23.4*/if(flash.containsKey("success"))/*23.36*/ {_display_(Seq[Any](format.raw/*23.38*/("""
+    """),format.raw/*24.5*/("""<div class="alert alert-success">
+    """),_display_(/*25.6*/flash/*25.11*/.get("success")),format.raw/*25.26*/("""
+    """),format.raw/*26.5*/("""</div>
+    """)))}),format.raw/*27.6*/("""
 
-"""),format.raw/*30.1*/("""<p>
-  <a href=""""),_display_(/*31.13*/routes/*31.19*/.HomeController.addGame()),format.raw/*31.44*/("""">
+"""),format.raw/*29.1*/("""<p>
+  <a href=""""),_display_(/*30.13*/routes/*30.19*/.HomeController.addGame()),format.raw/*30.44*/("""">
     <button class="btn btn-primary">Add a game</button>
   </a>
 </p>
@@ -70,7 +69,7 @@ Seq[Any](format.raw/*2.1*/("""
   </a>
 </td>
 
-""")))}),format.raw/*42.2*/("""
+""")))}),format.raw/*41.2*/("""
 """))
       }
     }
@@ -87,11 +86,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Apr 23 11:28:56 IST 2018
+                  DATE: Mon Apr 23 13:35:45 IST 2018
                   SOURCE: /home/wdd/Desktop/play-java-seed/app/views/index.scala.html
-                  HASH: 52ae56a5536c4003d9a1dab1ce7f2e337995c7ba
-                  MATRIX: 999->1|1178->87|1205->89|1232->108|1271->110|1300->113|1504->290|1519->296|1564->320|1637->367|1673->387|1712->388|1742->391|1797->419|1807->420|1836->428|1868->433|1938->473|1981->489|2038->520|2079->552|2119->554|2151->559|2216->598|2230->603|2266->618|2298->623|2340->635|2369->637|2412->653|2427->659|2473->684|2687->868
-                  LINES: 28->1|33->2|34->3|34->3|34->3|35->4|42->11|42->11|42->11|44->13|44->13|44->13|45->14|45->14|45->14|45->14|46->15|48->17|50->19|55->24|55->24|55->24|56->25|57->26|57->26|57->26|58->27|59->28|61->30|62->31|62->31|62->31|73->42
+                  HASH: 7a2e4b141c47c27ef5e8e0985feccf36d898c78c
+                  MATRIX: 999->1|1178->88|1209->111|1248->113|1277->116|1481->293|1496->299|1541->323|1614->370|1650->390|1689->391|1719->394|1774->422|1784->423|1813->431|1845->436|1915->476|1958->492|2015->523|2056->555|2096->557|2128->562|2193->601|2207->606|2243->621|2275->626|2317->638|2346->640|2389->656|2404->662|2450->687|2664->871
+                  LINES: 28->1|33->2|33->2|33->2|34->3|41->10|41->10|41->10|43->12|43->12|43->12|44->13|44->13|44->13|44->13|45->14|47->16|49->18|54->23|54->23|54->23|55->24|56->25|56->25|56->25|57->26|58->27|60->29|61->30|61->30|61->30|72->41
                   -- GENERATED --
               */
           
